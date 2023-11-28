@@ -39,3 +39,7 @@ granddaughter(X, Y) :- female(X), grandparent(X, _, Y).
 
 % Predykat 3
 partner(X,Y) :- parent(X,Z), parent(Y,Z), not(X = Y).
+
+% Predykat 4
+sibling(X, Y) :- parent(Z, X), parent(Z, Y), not(X = Y).
+aunt(X, Y) :- parent(Z, Y), sibling(X, Z), female(X).
