@@ -36,3 +36,6 @@ son(X, Y) :- male(X), child(X, Y).
 
 % Predykat 2
 granddaughter(X, Y) :- female(X), grandparent(X, _, Y).
+
+% Predykat 3
+partner(X,Y) :- parent(X,Z), parent(Y,Z), not(X = Y).
