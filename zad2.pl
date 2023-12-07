@@ -26,7 +26,7 @@ grandparent(X, Y, Z) :- parent(Y, X), parent(Z, Y).
 greatgrandparent(X, Y, Z, T) :- parent(Y, X), parent(Z, Y), parent(T, Z).
 
 ancestor(X, Y) :- parent(X, Y).
-ancestor(X, Y) :- ancestor(X, Z), parent(Z, Y).
+ancestor(X, Y) :- parent(Z, Y), ancestor(X, Z).
 
 partner(X, Y, Z) :- parent(X, Z), parent(Y, Z), not(X = Y).
 
