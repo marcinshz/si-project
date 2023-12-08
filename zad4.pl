@@ -5,7 +5,7 @@ sum(Head,X) :- X is Head.
 avg([],0).
 avg(List,W) :- sum(List,X), length(List,Y), W is X/Y.
 
-count(X,[],0).
-count(X,X,1).
-count(X,[X],1).
-count(X,[Head|Tail],N) :- count(X,Tail,P), count(X,Head,W), N is P+W.
+count(_, [], 0).
+count(X, [X], 1).
+count(X, [X|Tail], N) :- count(X, Tail, P), N is P + 1.
+count(X, [Head|Tail], N) :- dif(X, Head), count(X, Tail, N).
