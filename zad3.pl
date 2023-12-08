@@ -26,6 +26,9 @@ fact(zero, s(zero)) :- true.
 fact(s(zero), s(zero)) :- true.
 fact(s(X), Y) :- fact(X, Z), times(Z,s(X),Y).
 
-fibonacci(zero, s(zero)) :- true.
+add(zero,X,X) :- isnumber(X).
+add(s(X),Y,s(Z)) :- add(X,Y,Z).
+
+fibonacci(zero, zero) :- true.
 fibonacci(s(zero), s(zero)) :- true.
 fibonacci(s(s(X)), Y) :- fibonacci(X,A), fibonacci(s(X),B), add(A,B,Y).
