@@ -12,3 +12,6 @@ count(X, [Head|Tail], N) :- dif(X, Head), count(X, Tail, N).
 
 len([], 0).
 len([_|Tail], N) :- len(Tail, M), N is M + 1.
+
+double([], []).
+double([X|Xs], [X, X|Ys]) :- double(Xs, Ys).
