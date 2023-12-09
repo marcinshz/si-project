@@ -1,3 +1,12 @@
+member(Head, [Head|Tail]).
+member(X, [Head|Tail]) :- member(X,Tail).
+
+concat([], L2, L2).
+concat([Head|Tail], L2, [Head|L3]) :- concat(Tail, L2, L3).
+
+delete(Head, [Head|Tail], Tail).
+delete(X, [Y|Tail], [Y|L1]) :- delete(X, Tail, L1).
+
 sum([], 0).
 sum([Head|Tail], Sum) :- sum(Tail, TailSum), Sum is Head + TailSum.
 
