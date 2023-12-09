@@ -32,3 +32,6 @@ add(s(X),Y,s(Z)) :- add(X,Y,Z).
 fibonacci(zero, zero) :- true.
 fibonacci(s(zero), s(zero)) :- true.
 fibonacci(s(s(X)), Y) :- fibonacci(X,A), fibonacci(s(X),B), add(A,B,Y).
+
+shownum(zero,0).
+shownum(s(X),Y):-shownum(X,Q), Y is Q + 1.
