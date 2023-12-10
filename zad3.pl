@@ -13,6 +13,7 @@ add(s(X),Y,s(Z)) :- add(X,Y,Z).
 times(zero, X, zero) :- isnumber(X).
 times(s(X),Y,Z) :- times(X, Y, Q), add(Y,Q,Z).
 
+quotient(_, zero, _) :- !, fail.
 quotient(zero,zero, zero) :- false.
 quotient(X,Y,Z) :- times(Z,Y,X).
 
