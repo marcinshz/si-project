@@ -24,9 +24,9 @@ len([_|Tail], N) :- len(Tail, M), N is M + 1.
 double([], []).
 double([X|Xs], [X, X|Ys]) :- double(Xs, Ys).
 
-repeat([],[],_).
-repeat([X|Xs],Y,N) :-  
+repeat1([],[],_).
+repeat1([X|Xs],Y,N) :-  
     count(X,Y,N),
     len(Head, N),
     append(Head, Tail, Y),
-    repeat(Xs,Tail,N).
+    repeat1(Xs,Tail,N).
